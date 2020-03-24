@@ -1,6 +1,7 @@
 package com.spring.nebula.api.controller;
 
 import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
 import com.google.gson.Gson;
 import com.spring.nebula.api.entity.ErrorHandleLogVo;
 import com.spring.nebula.api.entity.MailMqVo;
@@ -21,11 +23,15 @@ import com.spring.nebula.mq.send.Send;
 import com.spring.nebula.util.JsonResult;
 import com.spring.nebula.util.ResultCode;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 /**
  * 
  * @author zheyan.yan
  *
  */
+@Api(tags = "API接口", value = "第三方API接口")
 @RestController
 @RequestMapping("/api")
 public class ApiController {
@@ -43,6 +49,7 @@ public class ApiController {
 	 * @param mailMqVo
 	 * @return
 	 */
+	@ApiOperation(value = "发送emailMq消息接口", notes = "")
     @PostMapping("/sendMqMsgToMail")
     @ResponseBody
     public JsonResult sendMqMsgToMail(@RequestBody MailMqVo mailMqVo){
@@ -75,6 +82,7 @@ public class ApiController {
 	 * @param mailMqVo
 	 * @return
 	 */
+	@ApiOperation(value = "发送emailMq消息接口ForGet", notes = "")
     @GetMapping("/sendMqMsgToMailForGet")
     @ResponseBody
     public JsonResult sendMqMsgToMailForGet(MailMqVo mailMqVo){
