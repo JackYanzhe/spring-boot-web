@@ -134,6 +134,7 @@ public class ApiController {
 	 * @param sku
 	 * @return
 	 */
+	@ApiOperation(value = "接口测试post接口", notes = "")
     @PostMapping("/judgeApiInfacePost")
     @ResponseBody
     public JsonResult judgeApiInface(@RequestBody String judgeInfo){
