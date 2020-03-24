@@ -1,0 +1,59 @@
+server:
+    port: 8080
+spring:
+    mvc:
+        view:
+          prefix: /WEB-INF/views/
+          suffix: .jsp
+    rabbitmq:
+        host: 139.224.226.138
+        port: 5672
+        username: admin
+        password: 123456
+    mail:
+        host: smtp.qq.com
+        username: 532968876@qq.com
+        password: pkntcevtxemfcaeb
+        properties:
+          mail:
+             smtp:
+               auth: true
+               timeout: 25000
+               starttls:
+                 enable: true
+                 required: true
+               socketFactory:
+                 port: 465
+                 class: javax.net.ssl.SSLSocketFactory
+                 fallback: false
+          default-encoding: UTF-8
+          port: 465
+    datasource:
+        name: mysql
+        url: jdbc:mysql://139.224.226.138:3306/sihengpaypal?useSSL=false&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+#        username: root
+#        password: root
+        username: root
+        password: 123456
+        # 使用druid数据源
+        type: com.alibaba.druid.pool.DruidDataSource
+        driverclassname: com.mysql.jdbc.Driver
+        filters: stat
+        maxActive: 20
+        initialSize: 1
+        maxWait: 60000
+        minIdle: 1
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: select 'x'
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+        maxOpenPreparedStatements: 20
+        multiStatementAllow: true
+    redis:
+        host: 139.224.226.138
+        password: yzhy@123456%
+        port: 6666
+        timeout: 10000  #redis 连接超时时间ms

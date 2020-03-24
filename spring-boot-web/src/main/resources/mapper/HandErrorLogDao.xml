@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.spring.nebula.api.dao.HandErrorLogDao" >
+
+  <select id="getLogInfos" resultType="com.spring.nebula.api.entity.ErrorHandleLogVo">
+		select id,fieldName,type,typeDetail,result,date,memo from  sihengpaypal.paypal_handle_log
+  </select>
+</mapper>
