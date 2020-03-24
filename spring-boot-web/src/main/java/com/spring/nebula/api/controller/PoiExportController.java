@@ -32,10 +32,14 @@ import com.spring.nebula.qrcode.vo.BillOrderItemTem;
 import com.spring.nebula.qrcode.vo.BillOrderTem;
 import com.spring.nebula.util.BillPdfProduce;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+@Api(tags = "报表导出接口", value = "报表导出接口")
 @RestController
 @RequestMapping("/PoiExport")
 public class PoiExportController {
 
+	@ApiOperation(value = "obtainBillpdf接口", notes = "")
 	@RequestMapping(value = "obtainBillpdf", method = RequestMethod.GET)
     public String obtainBillpdf(HttpServletRequest request,HttpServletResponse response,@RequestParam(value = "orderId",required = true) String orderId,@RequestParam(value = "accountId",required = true) String accountId) {
        
