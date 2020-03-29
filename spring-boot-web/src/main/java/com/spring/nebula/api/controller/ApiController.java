@@ -53,6 +53,8 @@ public class ApiController {
     @PostMapping("/sendMqMsgToMail")
     @ResponseBody
     public JsonResult sendMqMsgToMail(@RequestBody MailMqVo mailMqVo){
+		
+		//kgjfk
     	JsonResult jsonResult = new JsonResult();
     	Gson gson = new Gson();
     	try {
